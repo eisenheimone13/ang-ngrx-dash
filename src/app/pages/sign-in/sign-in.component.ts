@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Store } from '@ngrx/store';
 import { User } from '../../models/user';
@@ -10,21 +11,40 @@ import { AuthState } from '../../store/state/auth.state';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })
-
 export class SignInComponent implements OnInit {
-  user: User = new User();
+  // user: User = new User();
+  constructor(private store: Store<AuthState>) {}
 
-  constructor(
-    private store: Store<AuthState>
-  ) { }
+  ngOnInit() {}
 
-  ngOnInit() { }
+  form = new FormGroup(
+    {
+      email: new FormControl<string>('', [
+        Validators.required,
+        Validators.email,
+      ]),
+      password: new FormControl<string>('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+    },
+    { updateOn: 'submit' }
+  );
 
-  onSubmit() {
-    const email = this.user.email!
-    const password = this.user.password!
-
-    this.store.dispatch(login({ email, password }));
+  get email() {
+    return this.form.controls.email as FormControl;
   }
 
+  get password() {
+    return this.form.controls.password as FormControl;
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      const email = this.form.value.email!;
+      const password = this.form.value.password!;
+
+      this.store.dispatch(login({ email, password }));
+    }
+  }
 }

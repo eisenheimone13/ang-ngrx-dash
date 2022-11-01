@@ -4,36 +4,42 @@
     <main class="auth-container">
       <img src="../../assets/logo.svg" alt="" />
       <h2 class="auth-title">Sign in</h2>
-      <form
-        class="auth-form"
-        (ngSubmit)="onSubmit()"
-        ngNativeValidate
-      >
+      <form class="auth-form" (ngSubmit)="onSubmit()" [formGroup]="form">
         <div class="auth-form-control">
           <label class="auth-label" for="email">E-mail Address *</label>
           <div class="auth-form-input">
             <input
-              [(ngModel)]="user.email"
               id="email"
               name="email"
               class="auth-input"
               type="email"
+              formControlName="email"
               required
             />
           </div>
+          <p class="auth-valid" *ngIf="email.errors && email.touched">
+            Complete fill is required
+          </p>
         </div>
         <div class="auth-form-control">
           <label class="auth-label" for="password">Password *</label>
           <div class="auth-form-input">
             <input
-              [(ngModel)]="user.password"
               id="password"
               name="password"
               class="auth-input"
               type="password"
+              formControlName="password"
               required
             />
           </div>
+          <p
+            class="auth-valid"
+            *ngIf="password.errors?.minlength && password.touched"
+          >
+            Please fill password field width min length. Now
+            {{ password.value.length }}
+          </p>
         </div>
         <a class="auth-forgot" routerLink="/forgot">Forgot password ?</a>
         <button class="auth-btn" type="submit">Sign in</button>

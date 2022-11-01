@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,8 +23,8 @@ import { CompletedProfileComponent } from './components/completed-profile/comple
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { StoreModule } from "@ngrx/store";
-import { authReducer } from "./store/reducers/auth.reducers";
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './store/reducers/auth.reducers';
 
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
@@ -52,6 +52,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ auth: authReducer }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([AuthEffects]),
@@ -59,4 +60,4 @@ import { AuthService } from './services/auth.service';
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
