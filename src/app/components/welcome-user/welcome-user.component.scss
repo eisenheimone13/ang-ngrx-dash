@@ -1,0 +1,27 @@
+.welcom-content {
+  padding: 24px;
+
+  .welcom-title {
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .welcom-subtitle {
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .welcom-description {
+    font-weight: 400;
+    font-size: 16px;
+    color: #607d8b;
+    margin-bottom: 16px;
+  }
+
+  img {
+    display: block;
+    margin: 16px auto;
+  }
+}

@@ -1,0 +1,54 @@
+.fl-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fl-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  display: flex;
+}
+
+main {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding-bottom: 24px;
+}
+
+.dashboard-content {
+  display: flex;
+  padding: 16px;
+}
+
+.card-dashboard {
+  flex-basis: 33.3333%;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  max-width: 33.3333%;
+  padding: 24px;
+}
+
+.meeting-title {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.235;
+  margin-bottom: 24px;
+}
+
+.meeting-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #b2b2b2;
+  }
+}

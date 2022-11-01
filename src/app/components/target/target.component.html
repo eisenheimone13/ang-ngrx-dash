@@ -1,0 +1,17 @@
+<div class="progress-bar-item">
+  <div class="progress-bar-header">
+    <div>{{ target.title }}</div>
+    <div>{{ target.percentage }} %</div>
+  </div>
+  <div
+    class="progress-bar"
+    [style.backgroundColor]="target.bg_color"
+    [style.width]="target.total+'%'"
+  >
+    <span
+      class="progress-bar-fill"
+      [style.width]="target.percentage+'%'"
+      [style.backgroundColor]="target.completed_color"
+    ></span>
+  </div>
+</div>

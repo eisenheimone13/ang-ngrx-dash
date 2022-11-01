@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <app-svg-icon
+      class="sidebar-logo"
+      [path]="'../../assets/logo.svg'"
+      style="background: #455a64"
+    ></app-svg-icon>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a
+      class="sidebar-link"
+      routerLinkActive="active-link"
+      *ngFor="let item_link of links"
+      [routerLink]="[item_link.link]"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-svg-icon
+        [path]="'../../assets/' + item_link.icon + '.svg'"
+        style="background: #455a64"
+      ></app-svg-icon>
+      <div class="link-title">{{ item_link.title }}</div>
+    </a>
+  </nav>
+
+  <div class="sidebar-mock"></div>
+  
+  <nav class="sidebar-nav">
+    <a class="sidebar-link">
+      <app-svg-icon
+        [path]="'../../assets/users.svg'"
+        style="background: #455a64"
+      ></app-svg-icon>
+      <div class="link-title" *ngIf="user">{{ user.email }}</div>
+    </a>
+    <a class="sidebar-link">
+      <app-svg-icon
+        [path]="'../../assets/setting.svg'"
+        style="background: #455a64"
+      ></app-svg-icon>
+      <div class="link-title">Settings</div>
+    </a>
+  </nav>
+</div>

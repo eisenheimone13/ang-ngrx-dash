@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  min-height: 104px;
+  background-color: #eceff1; //eceff1
+  top: 0px;
+  left: auto;
+  right: 0px;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  position: sticky;
+  padding: 0 48px;
+}
+
+.exit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #fff;
+  border-radius: 50%;
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: #b2b2b2;
+  }
+
+  .exit-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

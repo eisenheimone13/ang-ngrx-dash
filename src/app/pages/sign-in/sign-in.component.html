@@ -1,0 +1,46 @@
+<main class="signin">
+  <div class="signin-wrap"></div>
+  <div class="signin-auth">
+    <main class="auth-container">
+      <img src="../../assets/logo.svg" alt="" />
+      <h2 class="auth-title">Sign in</h2>
+      <form
+        class="auth-form"
+        (ngSubmit)="onSubmit()"
+        ngNativeValidate
+      >
+        <div class="auth-form-control">
+          <label class="auth-label" for="email">E-mail Address *</label>
+          <div class="auth-form-input">
+            <input
+              [(ngModel)]="user.email"
+              id="email"
+              name="email"
+              class="auth-input"
+              type="email"
+              required
+            />
+          </div>
+        </div>
+        <div class="auth-form-control">
+          <label class="auth-label" for="password">Password *</label>
+          <div class="auth-form-input">
+            <input
+              [(ngModel)]="user.password"
+              id="password"
+              name="password"
+              class="auth-input"
+              type="password"
+              required
+            />
+          </div>
+        </div>
+        <a class="auth-forgot" routerLink="/forgot">Forgot password ?</a>
+        <button class="auth-btn" type="submit">Sign in</button>
+        <a class="auth-create" routerLink="/create"
+          >Don't have an account? Sign Up!</a
+        >
+      </form>
+    </main>
+  </div>
+</main>

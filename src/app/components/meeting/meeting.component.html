@@ -1,0 +1,22 @@
+<div class="meeting-item">
+  <div class="meeting-content">
+    <div class="meeting-image-block">
+      <img
+        class="meeting-image"
+        [src]="meeting.picture.medium"
+        [alt]="meeting.name.first"
+      />
+    </div>
+    <div class="meeting-details">
+      <div class="meeting-title">
+        {{ meeting.name.first + " " + meeting.name.last }}
+      </div>
+      <div class="meeting-times">
+        {{ (meeting.id.value && "id: " + meeting.id.value) || "8:00 - 10:00" }}
+      </div>
+    </div>
+    <div class="meeting-next" title="no working">
+      <img src="../../assets/right.svg" alt="right-icon" />
+    </div>
+  </div>
+</div>

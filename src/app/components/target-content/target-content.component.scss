@@ -1,0 +1,24 @@
+.target {
+  background-color: #fff;
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+
+.target-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 24px 0px;
+}
+
+.target-title {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.target-body {
+  padding: 24px;
+
+  ul {
+    list-style: none;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="target">
+  <div class="target-header">
+    <h2 class="target-title">Targets</h2>
+  </div>
+  <div class="target-body">
+    <ul>
+      <li>
+        <app-target
+          *ngFor="let target of targets"
+          [target]="target"
+        ></app-target>
+      </li>
+    </ul>
+  </div>
+</div>

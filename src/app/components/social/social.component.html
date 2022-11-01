@@ -1,0 +1,25 @@
+<div class="social-item">
+  <div class="social-content">
+    <div class="social-image-block" [style.backgroundColor]="social.bg_color">
+      <app-svg-icon
+        class="social-type"
+        [path]="'../../assets/' + social.icon + '.svg'"
+        style="background: #fff"
+      ></app-svg-icon>
+    </div>
+    <div class="social-details">
+      <div class="social-title">
+        {{ social.type }}
+      </div>
+      <div class="social-quantity">
+        {{ social.quantity | number }}
+      </div>
+    </div>
+    <div class="social-next" title="no working">
+      <img
+        [src]="'../../assets/' + social.stat_icon + '.svg'"
+        [alt]="social.type"
+      />
+    </div>
+  </div>
+</div>
